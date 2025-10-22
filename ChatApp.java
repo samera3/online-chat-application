@@ -2,8 +2,6 @@
 
 // ChatApp.java
 // Full chat server & client in one file
-// Author: [Your Name]
-// Date: [Date]
 
 import java.io.*;
 import java.net.*;
