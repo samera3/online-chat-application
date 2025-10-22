@@ -1,5 +1,3 @@
-
-
 Online Chat Application
 
 Author: Samera
@@ -95,5 +93,4 @@ Notes
 	•	All functionality is implemented in a single file (ChatApp.java).
 	•	The application demonstrates multi-threaded client-server communication in Java.
 	•	The interface is console-based, text-only.
-
 
