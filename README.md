@@ -1,3 +1,8 @@
+
+
+
+
+
 Online Chat Application
 
 Author: Samera
@@ -10,16 +15,15 @@ The server handles multiple client connections, allowing users to send and recei
 Clients connect to the server and can send messages to other connected clients using a text-based interface.
 
 
-
 Features
 	•	Server:
-	•	Listens for incoming client connections on port 12345.
+	•	Listens for incoming client connections on port 1234.
 	•	Handles multiple clients simultaneously using a separate thread for each client (ClientHandler inner class).
 	•	Assigns a unique name automatically to each connected client (e.g., User1, User2, etc.).
 	•	Broadcasts messages received from one client to all other connected clients.
 	•	Removes disconnected clients from the active client set (no advanced error handling).
 	•	Client:
-	•	Connects to the server on localhost:12345.
+	•	Connects to the server on localhost:1234.
 	•	Receives a unique name automatically from the server.
 	•	Sends messages to the server.
 	•	Receives and displays messages from other clients in real-time.
@@ -46,17 +50,19 @@ Chat Server started...
 
 3. Run Clients
 
-Open one or more additional terminals.
-For each client, run:
+Open one or more additional terminals. For each client, run:
 
 java ChatApp client
 
 	•	Each client will automatically receive a unique name from the server.
 	•	After receiving the name, clients can start sending messages.
 
+
 4. Send Messages
 	•	Type messages in one client’s terminal and press Enter.
 	•	Messages appear in all other connected clients’ terminals.
+
+⸻
 
 5. Disconnect a Client
 	•	Close the client terminal to disconnect.
@@ -66,26 +72,24 @@ java ChatApp client
 Implementation Details
 
 Server
-	•	Purpose: Handles client connections and broadcasts messages to all other clients.
-	•	Key Components:
-	•	ServerSocket listens for incoming connections.
+	•	Handles client connections and broadcasts messages to all other clients.
+	•	Uses ServerSocket to listen for incoming connections.
 	•	ClientHandler inner class handles each client in a separate thread.
 	•	Set<ClientHandler> stores all connected clients.
 	•	broadcast() method sends messages to all clients except the sender.
-	•	clientCount variable is used to assign unique names automatically.
+	•	clientIdCounter variable assigns unique names automatically.
 
 Client
-	•	Purpose: Connects to the server and allows sending and receiving messages.
-	•	Key Components:
-	•	Socket connects to the server.
+	•	Connects to the server and allows sending and receiving messages.
+	•	Uses Socket to connect to the server.
 	•	BufferedReader and PrintWriter handle input/output streams.
-	•	Background thread continuously reads messages from the server while the main thread handles user input.
+	•	A background thread continuously reads messages from the server while the main thread handles user input.
 	•	Client receives a unique name automatically from the server.
 
 
 Troubleshooting
-	•	No Connection: Ensure the server is running and the client connects to localhost:12345.
-	•	No Messages: Verify that messages are sent and the server broadcasts them correctly.
+	•	No Connection: Ensure the server is running and the client connects to localhost:1234.
+	•	No Messages: Verify that messages are sent and that the server broadcasts them correctly.
 	•	Client Disconnection: Closing a client terminal removes it from the server automatically.
 
 
